@@ -6,4 +6,14 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Rango says hey there partner!")
+    about_page_link = "<a href='/rango/about/'>About</a>"
+    return HttpResponse(
+        f"Rango says hey there partner! Go to the {about_page_link} Page"
+    )
+
+
+def about(request):
+    home_page_link = ": <a href='/rango/'>Index</a>."
+    return HttpResponse(
+        f"Rango says here is the about page. Back to the {home_page_link} Page"
+    )
